@@ -1,7 +1,5 @@
 import streamlit as st
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')  # Set backend to avoid using matplotlib interactive mode
 
 from pycba.beam import Beam
 from pycba.analysis import BeamAnalysis

@@ -2,6 +2,7 @@ streamlit
 numpy
 matplotlib<=3.7.1
 plotly
+scipy
 contourpy
 fonttools
 cycler

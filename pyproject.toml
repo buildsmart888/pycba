@@ -7,6 +7,7 @@ build-backend = "setuptools.build_meta"
 name = "PyCBA"
 dynamic = ["version"]
 description = "Python Continuous Beam Analysis"
+requires-python = ">=3.7,<3.14"
 license = {text = "Apache 2.0"}
 keywords = ["beam","bridge","vehicle"]
 authors = [{name = "Colin Caprani", email = "colin.caprani@monash.edu"}]
@@ -25,8 +26,9 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
-requires-python = ">=3.8"
 dependencies = [
     "matplotlib",
     "numpy",

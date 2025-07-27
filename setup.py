@@ -5,6 +5,7 @@ setup(
     version="0.1",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
+    python_requires=">=3.7,<3.14",
     install_requires=[
         "streamlit>=1.29.0",
         "numpy>=1.24.0",
@@ -20,5 +21,4 @@ setup(
         "python-dateutil>=2.7",
         "six>=1.5"
     ],
-    python_requires=">=3.7,<3.12",
 )
