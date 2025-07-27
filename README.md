@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PyCBA - Python Continuous Beam Analysis
 
 ![PyCBA logo](https://raw.githubusercontent.com/ccaprani/pycba/main/docs/source/images/pycba_logo.png)
@@ -15,3 +16,7 @@ One of the main functions of `PyCBA` is that the basic analysis engine forms the
 - Influence line generation
 - Moving load analysis for bridges, targeted at bridge access assessments
 - Load patterning and enveloping
+=======
+# pycba
+Continuous beam Analysis
+>>>>>>> d27e15df06ac625b3f4dc490f3c3d824f1c31fbd
