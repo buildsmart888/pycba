@@ -1,5 +1,17 @@
 import streamlit as st
 import numpy as np
+import sys
+import os
+
+# Add src directory to Python path
+src_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "src")
+if src_path not in sys.path:
+    sys.path.append(src_path)
+
+# Set backend to avoid using matplotlib
+import matplotlib
+matplotlib.use('Agg')
+
 from pycba.beam import Beam
 from pycba.analysis import BeamAnalysis
 import plotly.graph_objects as go
