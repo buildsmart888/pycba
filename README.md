@@ -1,6 +1,8 @@
 # pycba-re01
 Continuous Beam Analysis Application
-WebApp : https://iypav9zzuwfvf8oyzhxfpe.streamlit.app/
+WebApp : https://continuousbeamanalysis.streamlit.app/
+RC Beam-Design-SDM-Application
+WebApp : https://beam-design-sdm-app.streamlit.app/
 <img width="987" height="473" alt="image" src="https://github.com/user-attachments/assets/c422e446-7137-45cf-87d0-93a7c0f78044" />
 <img width="938" height="351" alt="image" src="https://github.com/user-attachments/assets/432c1aa8-f042-4e19-b04e-0fe62df5dd29" />
 <img width="954" height="524" alt="image" src="https://github.com/user-attachments/assets/8a133f13-431d-4544-b578-0a558d6dc886" />
