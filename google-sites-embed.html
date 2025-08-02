@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyCBA Engineering Suite - โปรแกรมวิศวกรรมโครงสร้าง</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .app-frame {
+            width: 100%;
+            height: 800px;
+            border: none;
+            background: #f0f2f6;
+        }
+        
+        .info {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .app-frame { height: 600px; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏗️ PyCBA</h1>
+            <p>Continuous Beam Analysis - วิเคราะห์โครงสร้างคานต่อเนื่อง</p>
+        </div>
+        
+        <div class="info">
+            <h2>🚀 เครื่องมือวิเคราะห์โครงสร้าง</h2>
+            <p>แอปพลิเคชันสำหรับวิเคราะห์คานต่อเนื่อง (Continuous Beam) ด้วยเทคโนโลยี Python และ Streamlit</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>แผนภาพโครงสร้าง</h3>
+                    <p>FBD, SFD, BMD แบบ Interactive</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>คำนวณแรงปฏิกิริยา</h3>
+                    <p>Reaction Forces อัตโนมัติ</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎛️</div>
+                    <h3>Load Factors</h3>
+                    <p>ปรับค่า Dead Load และ Live Load</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>ใช้งานได้ทุกอุปกรณ์</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading" id="loading">
+            <p>🔄 กำลังโหลดแอปพลิเคชัน...</p>
+            <p><small>หากไม่สามารถโหลดได้ กรุณา <a href="https://your-app.streamlit.app" target="_blank">คลิกที่นี่</a></small></p>
+        </div>
+        
+        <!-- Replace this URL with your actual Streamlit app URL -->
+        <iframe 
+            id="appFrame"
+            class="app-frame" 
+            src="https://your-streamlit-app-url.streamlit.app"
+            style="display: none;"
+            onload="document.getElementById('loading').style.display='none'; this.style.display='block';">
+        </iframe>
+        
+        <div class="footer">
+            <p>Powered by <strong>PyCBA</strong> | Built with ❤️ using Python & Streamlit</p>
+            <p><small>© 2025 - Open Source Structural Analysis Tool</small></p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-resize iframe based on content
+        function resizeIframe() {
+            const iframe = document.getElementById('appFrame');
+            try {
+                iframe.style.height = (iframe.contentWindow.document.body.scrollHeight + 50) + 'px';
+            } catch (e) {
+                // Cross-origin restrictions - use default height
+                console.log('Using default iframe height due to CORS');
+            }
+        }
+
+        // Show error message if iframe fails to load
+        setTimeout(function() {
+            const loading = document.getElementById('loading');
+            if (loading.style.display !== 'none') {
+                loading.innerHTML = `
+                    <p>⚠️ ไม่สามารถโหลดแอปพลิเคชันได้</p>
+                    <p><a href="https://your-app.streamlit.app" target="_blank" style="color: #FF6B6B; text-decoration: none; font-weight: bold;">เปิดในหน้าต่างใหม่ →</a></p>
+                `;
+            }
+        }, 10000); // Show error after 10 seconds
+    </script>
+</body>
+</html>

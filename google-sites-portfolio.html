@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyCBA Engineering Suite - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #2a5298;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .program-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #2a5298;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .program-card .icon { font-size: 3rem; margin-bottom: 1rem; }
+        .program-card h3 { color: #2a5298; font-size: 1.5rem; margin-bottom: 1rem; }
+        
+        .status {
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .status.available { background: #d4edda; color: #155724; }
+        .status.development { background: #fff3cd; color: #856404; }
+        .status.planned { background: #f8d7da; color: #721c24; }
+        
+        .launch-btn {
+            background: linear-gradient(45deg, #2a5298, #1e3c72);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .launch-btn:hover {
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(42, 82, 152, 0.4);
+        }
+        
+        .launch-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .embed-info {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .embed-code {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .programs-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏗️ PyCBA Engineering Suite</h1>
+            <div style="font-size: 1.3rem; color: #666; margin-bottom: 1rem;">
+                ชุดโปรแกรมวิศวกรรมโครงสร้าง สำหรับการวิเคราะห์และออกแบบ
+            </div>
+            <div style="font-size: 1.1rem; color: #777; max-width: 800px; margin: 0 auto;">
+                เครื่องมือวิศวกรรมโครงสร้างที่ทันสมัย แม่นยำ และใช้งานง่าย 
+                พัฒนาด้วย Python และ Streamlit เพื่อวิศวกรและนักศึกษาไทย
+            </div>
+        </div>
+
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="icon">🏗️</div>
+                <h3>Continuous Beam Analysis</h3>
+                <div class="status available">✅ พร้อมใช้งาน</div>
+                <div style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">
+                    วิเคราะห์คานต่อเนื่องหลายช่วง พร้อมแสดงผลแผนภาพ FBD, SFD, BMD 
+                    และคำนวณแรงปฏิกิริยาอย่างแม่นยำ
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 0.3rem 0; color: #555;">✓ วิเคราะห์คานต่อเนื่องได้หลายช่วง</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ คำนวณแรงปฏิกิริยา (Reactions)</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ แสดงแผนภาพ FBD, SFD, BMD</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ ปรับค่า Load Factor ได้</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ UI ที่ใช้งานง่าย</li>
+                    </ul>
+                </div>
+                <button class="launch-btn" onclick="openBeamAnalysis()">
+                    🚀 เริ่มใช้งาน
+                </button>
+            </div>
+
+            <div class="program-card">
+                <div class="icon">🌉</div>
+                <h3>Bridge Analysis</h3>
+                <div class="status development">🚧 กำลังพัฒนา</div>
+                <div style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">
+                    วิเคราะห์สะพานและโครงสร้างขนาดใหญ่ รองรับมาตรฐาน DPT 
+                    พร้อม Moving Load Analysis
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 0.3rem 0; color: #555;">✓ วิเคราะห์สะพานคอนกรีต</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ Live Load Distribution</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ Influence Lines Analysis</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ Moving Load Analysis</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ ตรวจสอบตาม มาตรฐาน DPT</li>
+                    </ul>
+                </div>
+                <button class="launch-btn" disabled>⏳ เร็วๆ นี้</button>
+            </div>
+
+            <div class="program-card">
+                <div class="icon">🏢</div>
+                <h3>Frame Analysis</h3>
+                <div class="status planned">📅 วางแผนพัฒนา</div>
+                <div style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">
+                    วิเคราะห์โครงข้อแข็งสำหรับอาคาร รองรับ 2D/3D Analysis 
+                    พร้อม Seismic และ Wind Load
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 0.3rem 0; color: #555;">✓ วิเคราะห์โครงสร้างอาคาร 2D/3D</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ คำนวณ Lateral Load</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ ตรวจสอบ P-Delta Effect</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ Seismic Analysis</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ Wind Load Analysis</li>
+                    </ul>
+                </div>
+                <button class="launch-btn" disabled>📋 2026</button>
+            </div>
+
+            <div class="program-card">
+                <div class="icon">🔧</div>
+                <h3>Section Properties</h3>
+                <div class="status planned">📅 วางแผนพัฒนา</div>
+                <div style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">
+                    คำนวณคุณสมบัติหน้าตัดต่างๆ รองรับ Custom Shape 
+                    และ Standard Steel Sections
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 0.3rem 0; color: #555;">✓ คำนวณ Area, Moment of Inertia</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ Section Modulus</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ Radius of Gyration</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ Custom Shape Design</li>
+                        <li style="padding: 0.3rem 0; color: #555;">✓ Standard Steel Sections</li>
+                    </ul>
+                </div>
+                <button class="launch-btn" disabled>📋 2026</button>
+            </div>
+        </div>
+
+        <div style="text-align: center; background: rgba(255, 255, 255, 0.95); padding: 3rem 2rem; border-radius: 15px; margin: 2rem 0; box-shadow: 0 8px 25px rgba(0,0,0,0.1);">
+            <h2 style="color: #2a5298; font-size: 2.5rem; margin-bottom: 1rem;">🚀 เริ่มต้นใช้งานวันนี้</h2>
+            <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                PyCBA Suite พร้อมให้คุณวิเคราะห์โครงสร้างอย่างมืออาชีพ 
+                ไม่ต้องติดตั้งโปรแกรม ใช้งานได้ทันทีผ่าน Web Browser
+            </p>
+            <button class="launch-btn" onclick="openMainApp()" style="max-width: 300px;">
+                🌐 เปิดใช้งาน PyCBA Suite
+            </button>
+        </div>
+
+        <div class="embed-info">
+            <h3 style="color: #2a5298; margin-bottom: 1rem;">📋 วิธีนำไปใส่ใน Google Sites</h3>
+            <p>สำหรับ <strong>Streamlit Community Cloud</strong> (แนะนำ):</p>
+            <ol>
+                <li>Push โค้ดไปยัง GitHub Repository</li>
+                <li>ไปที่ <a href="https://share.streamlit.io" target="_blank">share.streamlit.io</a></li>
+                <li>เชื่อมต่อ GitHub และเลือก Repository</li>
+                <li>Set main file path: <code>home.py</code></li>
+                <li>Deploy และรับ URL</li>
+            </ol>
+            
+            <p><strong>แล้วนำ URL มาใส่ใน Google Sites:</strong></p>
+            <div class="embed-code">
+&lt;iframe src="https://your-app-name.streamlit.app" 
+        width="100%" 
+        height="800" 
+        frameborder="0"
+        style="border: none; border-radius: 10px;"&gt;
+&lt;/iframe&gt;
+            </div>
+            
+            <p><strong>หรือใช้ Google Cloud Run:</strong></p>
+            <div class="embed-code">
+# Deploy to Google Cloud Run
+gcloud run deploy pycba-suite \
+  --source . \
+  --platform managed \
+  --region asia-southeast1 \
+  --allow-unauthenticated
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openBeamAnalysis() {
+            // สำหรับ Streamlit Community Cloud
+            // window.open('https://your-app-name.streamlit.app', '_blank');
+            
+            // สำหรับ local testing
+            window.open('http://localhost:8501', '_blank');
+        }
+        
+        function openMainApp() {
+            // สำหรับ production
+            // window.open('https://your-app-name.streamlit.app', '_blank');
+            
+            // สำหรับ local testing
+            window.open('http://localhost:8501', '_blank');
+        }
+    </script>
+</body>
+</html>
